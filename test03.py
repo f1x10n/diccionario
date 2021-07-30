@@ -1,10 +1,9 @@
+#prueba git
 import itertools as iter
 from itertools import chain
 import more_itertools as miter
 from collections import Counter as coun
 import cardinality as card
-
-#prueba git
 
 alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 minusculas = alfabeto[0:26]

@@ -4,6 +4,8 @@ import more_itertools as miter
 from collections import Counter as coun
 import cardinality as card
 
+#prueba git
+
 alfabeto = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 minusculas = alfabeto[0:26]
 mayusculas = alfabeto[26:52]

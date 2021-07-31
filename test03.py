@@ -1,6 +1,6 @@
 #prueba git03
 import itertools as iter
-from itertools import chain
+from itertools import chain, repeat
 import more_itertools as miter
 from collections import Counter as coun
 import cardinality as card
@@ -16,9 +16,9 @@ file = open("wordlist.txt", "w+")
 #caracteres usados para crear lista de contraseñs
 alfab = alfabeto
 #longitud mínima de la contraseña
-min_lon = 3
+min_lon = 1
 #longitud máxima de la contraseña
-max_lon = 4
+max_lon = 2
 #numero de repeticiones consecutivas no permitidas
 max_rep = 2
 
@@ -33,7 +33,12 @@ def Lista():
     return chain.from_iterable(iter.product(alfab, repeat=i)
         for i in range(min_lon, max_lon + 1))
 
+    # return chain.from_iterable(iter.repeat("a", times=i)
+    #     for i in range(1, max_rep+1))
+
 lista = Lista()
+
+miter.adjace
 
 for w in lista:
     print(w)

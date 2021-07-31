@@ -16,36 +16,28 @@ file = open("wordlist.txt", "w+")
 #caracteres usados para crear lista de contraseñs
 alfab = alfabeto
 #longitud mínima de la contraseña
-min_lon = 1
+min_lon = 2
 #longitud máxima de la contraseña
-max_lon = 2
+max_lon = 3
 #numero de repeticiones consecutivas no permitidas
-max_rep = 2
+max_rep = 3
 
-#Crea un iterador con resultado tuples de longitud igual a "repeat" usando los caracteres de la cadena entregada
-# lista = ""
-# for i in range(min_lon, max_lon + 1):
-#     lista = iter.chainn(for w in iter.product(alfab, repeat=i))
+def Lista_rep():
+    if max_rep >= 2:
+        return chain.from_iterable(iter.product(w, repeat=i) 
+            for w in "abc" for i in range(1, max_rep+1))
 
-# lista = iter.product(alfab, repeat=1)
+alfa_rep = Lista_rep()
 
-def Lista():
-    return chain.from_iterable(iter.product(alfab, repeat=i)
-        for i in range(min_lon, max_lon + 1))
+# lista1 = chain(repeticiones, "abc")
 
-    # return chain.from_iterable(iter.repeat("a", times=i)
-    #     for i in range(1, max_rep+1))
+def Permutaciones():
+    return chain.from_iterable(iter.permutations(alfa_rep, i) for i in range(min_lon, max_lon + 1))
 
-lista = Lista()
-
-miter.adjace
-
+lista = Permutaciones()
+   
 for w in lista:
     print(w)
-
-
-
-
 
 #filtra el iterador cuando 
 # lista_filtrada = iter.filterfalse(lambda x: coun(x).most_common(1)[0][1] >= max_rep, lista_bruta)

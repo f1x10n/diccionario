@@ -13,8 +13,9 @@ numeros = alfabeto[52:]
 #crea archivo .txt
 file = open("wordlist.txt", "w+")
 
-#caracteres usados para crear lista de contraseñs
-alfab = alfabeto
+#caracteres usados para crear lista de contraseñas
+# alfab = alfabeto
+alfab = "abc"
 #longitud mínima de la contraseña
 min_lon = 2
 #longitud máxima de la contraseña
@@ -25,17 +26,22 @@ max_rep = 3
 def Lista_rep():
     if max_rep >= 2:
         return chain.from_iterable(iter.product(w, repeat=i) 
-            for w in "abc" for i in range(1, max_rep+1))
+            for w in alfab for i in range(1, max_rep))
 
 alfa_rep = Lista_rep()
 
-# lista1 = chain(repeticiones, "abc")
 
 def Permutaciones():
     return chain.from_iterable(iter.permutations(alfa_rep, i) for i in range(min_lon, max_lon + 1))
 
 lista = Permutaciones()
-   
+
+def flatten(list_of_lists):
+    "Flatten one level of nesting"
+    return chain.from_iterable(list_of_lists)
+
+lista = map(flatten, lista)
+
 for w in lista:
     print(w)
 

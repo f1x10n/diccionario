@@ -14,7 +14,7 @@ file = open("wordlist.txt", "w+")
 
 #caracteres usados para crear lista de contraseñas
 # alfab = alfabeto
-alfa = "abcdefg"
+alfa = "abcdeE"
 #longitud mínima de la contraseña
 min_lon = 3
 #longitud máxima de la contraseña
@@ -30,7 +30,7 @@ def Lista_completa(caracteres=alfa, minimo=min_lon, maximo=max_lon):
 lista = Lista_completa()
 
 def Ventana(palabra, largo_ventana):
-    #devuelve una lista de ventanas
+    #devuelve una lista de ventanas del largo especificado
     return list(miter.windowed(palabra, largo_ventana))
 
 def Chequeo_ventanas(lista_ventanas, repeticiones_maximas):
@@ -47,5 +47,5 @@ def Chequeo_palabra(palabra, repeticiones_maximas=max_rep):
 lista_f = list(iter.filterfalse(Chequeo_palabra, lista))
 
 for w in lista_f:
-    print("{} {}".format("".join(w), "Contraseña válida."))
+    print(w)
     file.write("".join(w)+"\n")
